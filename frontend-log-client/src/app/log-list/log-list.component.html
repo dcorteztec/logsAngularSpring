@@ -1,0 +1,32 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Log List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Data Hora</th>
+          <th>IP</th>
+          <th>HTTP Method</th>
+          <th>Status HTTP</th>
+          <th>User Agent</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let log of logs | async">
+          <td>{{log.dateTime}}</td>
+          <td>{{log.ip}}</td>
+          <td>{{log.httpMethod}}</td>
+          <td>{{log.statusMethod}}</td>
+          <td>{{log.userAgent}}</td>
+          <td><button (click)="deleteLog(log.id)" class="btn btn-danger">Delete</button>
+              <button (click)="updateLog(log.id)" class="btn btn-danger">Update</button>
+              <button (click)="logDetails(log.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

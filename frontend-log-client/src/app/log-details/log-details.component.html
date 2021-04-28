@@ -1,0 +1,24 @@
+<h2>Log Details</h2>
+
+<hr/>
+<div *ngIf="log">
+  <div>
+    <label><b>Date: </b></label> {{log.dateTime}}
+  </div>
+  <div>
+    <label><b>IP: </b></label> {{log.ip}}
+  </div>
+  <div>
+    <label><b>HTTP Method: </b></label> {{log.httpMethod}}
+  </div>
+  <div>
+    <label><b>Status HTTP: </b></label> {{log.statusMethod}}
+  </div>
+  <div>
+    <label><b>User Agent: </b></label> {{log.userAgent}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Log List</button><br>
